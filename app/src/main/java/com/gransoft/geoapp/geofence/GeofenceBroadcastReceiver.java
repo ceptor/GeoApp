@@ -13,7 +13,7 @@ import com.gransoft.geoapp.MyDatabaseHelper;
 public class GeofenceBroadcastReceiver extends BroadcastReceiver {
 
     private static final String TAG = "GeofenceBroadcastReceiver";
-    private static String msg = "";
+    private static String message = "";
     private static String messageBody = "";
 
     @Override
@@ -21,18 +21,18 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
         GeofencingEvent geofencingEvent = GeofencingEvent.fromIntent(intent);
         int transition = geofencingEvent.getGeofenceTransition();
         if (transition == Geofence.GEOFENCE_TRANSITION_ENTER){
-            msg = "Enter";
+            message = "Enter";
             messageBody = "You are entering into home zone";
         } else if (transition == Geofence.GEOFENCE_TRANSITION_EXIT){
-            msg = "Exit";
+            message = "Exit";
             messageBody = "You are exiting from home zone";
         }
 
         Log.d(TAG, messageBody);
         NotificationHelper notificationHelper = new NotificationHelper(context);
-        notificationHelper.sendHighPriorityNotification(msg, messageBody, MainActivity.class);
+        notificationHelper.sendHighPriorityNotification(message, messageBody, MainActivity.class);
 
         MyDatabaseHelper db = new MyDatabaseHelper(context);
-        db.addBook(msg, messageBody, 1);
+        db.addBook(message, messageBody, 1);
     }
 }

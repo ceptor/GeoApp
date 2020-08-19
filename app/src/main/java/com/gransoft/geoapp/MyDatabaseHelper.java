@@ -43,13 +43,13 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addBook(String title, String author, int pages){
+    public void addBook(String message, String messageBody, int freeUse){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(COLUMN_MESSAGE, title);
-        contentValues.put(COLUMN_MESSAGE_BODY, author);
-        contentValues.put(COLUMN_FREE_USE, pages);
+        contentValues.put(COLUMN_MESSAGE, message);
+        contentValues.put(COLUMN_MESSAGE_BODY, messageBody);
+        contentValues.put(COLUMN_FREE_USE, freeUse);
 
         long result = db.insert(TABLE_NAME, null, contentValues);
         if(result == -1) {

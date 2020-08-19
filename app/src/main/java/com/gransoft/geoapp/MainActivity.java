@@ -31,6 +31,9 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
+
+    //Work location
+    LatLng latLng = new LatLng(50.0260, 36.2169);
     private static final int radius = 200;
 
     private GeofencingClient geofencingClient;
@@ -51,9 +54,6 @@ public class MainActivity extends AppCompatActivity {
 
         geofencingClient = LocationServices.getGeofencingClient(this);
         geofenceHelper = new GeofenceHelper(this);
-
-        //Work location
-        LatLng latLng = new LatLng(50.0260, 36.2169);
 
         addGeofence(latLng, radius);
 
@@ -112,12 +112,12 @@ public class MainActivity extends AppCompatActivity {
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        Log.d(TAG, "onSuccess: Geofence added...");
+                        Log.d(TAG, "Success: Geofence added...");
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Log.d(TAG, "onFailure: " + e.getLocalizedMessage());
+                Log.d(TAG, "Failure: " + e.getLocalizedMessage());
             }
         });
     }
