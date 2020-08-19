@@ -28,7 +28,6 @@ proguard/
 *.log
 .navigation/
 captures/
-*.iml
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/gradle.xml
@@ -38,7 +37,6 @@ captures/
 .idea/caches
 .idea/modules.xml
 .idea/navEditor.xml
-.externalNativeBuild
 .cxx/
 freeline.py
 freeline/
@@ -55,7 +53,6 @@ lint/outputs/
 lint/tmp/
 gen-external-apklibs
 output.json
-.DS_Store
 .AppleDouble
 .LSOverride
 Icon
@@ -72,7 +69,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
-.gradle
 .signing/
 /*/build/
 /*/local.properties
@@ -137,20 +133,9 @@ fabric.properties
 .idea/**/libraries
 cmake-build-*/
 .idea/**/mongoSettings.xml
-*.iws
-out/
-.idea_modules/
-atlassian-ide-plugin.xml
 .idea/replstate.xml
-com_crashlytics_export_strings.xml
-crashlytics.properties
-crashlytics-build.properties
-fabric.properties
 .idea/httpRequests
 .idea/caches/build_file_checksums.ser
 .idea/
-*.iml
 modules.xml
-.idea/misc.xml
-*.ipr
 .idea/sonarlint
